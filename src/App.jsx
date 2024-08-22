@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import ContactForm from "./assets/components/contactForm/ContactForm.jsx";
+import ContactList from "./assets/components/contactList/ContactList.jsx";
 
 function App() {
   const [contacts, setContacts] = useState([
@@ -7,7 +9,12 @@ function App() {
     { name: "Giulia Bianchi", phone: "987654321", email: "giulia@bianchi.com" },
   ]);
 
-  return <></>;
+  return (
+    <>
+      <ContactForm contacts={contacts} setContacts={setContacts} />
+      <ContactList contacts={contacts} setContacts={setContacts} />
+    </>
+  );
 }
 
 export default App;
